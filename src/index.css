@@ -1,13 +1,455 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+
+.dark-theme {
+  --mainBackground: #282c35;
+  --mainColor: #fff;
+  --btnColor: #ffa7c4;
+  --smallWidth: 85vw;
+  --maxWidth: 40rem;
+  --fullWidth: 1170px;
+  --mainTransition: all 0.3s linear;
+  --mainSpacing: 0.3rem;
+  --shadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  --primaryColor: #929090;
+  --logoColor: #d6c8c8f6;
+  --accesss: #282c35;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.white-theme {
+  --mainBackground: #fff;
+  --btnColor: #999999cb;
+  --mainColor: #222;
+  --smallWidth: 85vw;
+  --maxWidth: 40rem;
+  --fullWidth: 1170px;
+  --mainTransition: all 0.3s linear;
+  --mainSpacing: 0.3rem;
+  --shadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  --primaryColor: #bebebe;
+  --logoColor: #313030e5;
+  --accesss: #858282;
+}
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: var(--mainColor);
+  background: var(--mainBackground);
+  line-height: 1.4;
+  font-size: 1.5;
+  font-weight: 300;
+}
+h1,
+h2,
+h3,
+h4,
+h6 {
+  margin-bottom: 1.25rem;
+  color: #282c35;;
+  letter-spacing: var(--mainSpacing);
+}
+p {
+  margin-bottom: 1.25rem;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: var(--mainBlack);
+}
+img {
+  width: 100%;
+  display: block;
+}
+
+.navbar {
+    background: var(--mainBackground);
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid var(--mainBlack);
+    box-shadow: var(--shadow);
+}
+
+.nav-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: var(--smallWidth);
+  margin: 0 auto;
+  max-width: var(--fullWidth);
+}
+
+
+
+.logo-name {
+  color: var(--mainBlack);
+  text-transform: capitalize;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  transition: var(--mainTransition);
+}
+
+.logo-name:hover {
+  color: var(--btnColor);
+}
+/* section */
+.section {
+  padding: 1rem 0;
+  position: relative;
+}
+
+.section-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
+}
+@media screen and (min-width: 992px) {
+  .section-center {
+    width: 95vw;
+  }
+}
+
+/* SearchContainer */
+
+.f {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 8em;
+  
+}
+
+@media screen and (min-width: 992px) {
+  .f {
+    width: 95vw;
+  }
+} 
+
+.searchBarContainer {
+  display: flex;
+  flex-direction: column;
+  width: 34em;
+  height: 3.8em;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: all 350ms linear;
+  min-height: 100%;
+  background-color: rgb(231, 231, 231);
+
+}
+.searchBarContainerExpanded {
+  height: 30em;
+}
+
+
+@media  screen and (min-height: 667px) {
+    .searchBarContainerExpanded {
+      height: 15em;
+    }
+}
+
+@media  screen and (min-height: 898px) {
+  .searchBarContainerExpanded {
+    height: 30em;
+  }
+}
+
+@media  screen and (min-height: 896px) {
+  .searchBarContainerExpanded {
+    height: 30em;
+  }
+}
+@media  screen and (min-height: 884px) {
+  .searchBarContainerExpanded {
+    height: 30em;
+  }
+}
+
+@media  screen and (min-height: 851px) {
+  .searchBarContainerExpanded {
+    height: 30em;
+  }
+}
+
+@media screen and (min-height: 914px) {
+  .searchBarContainerExpanded {
+    height: 30em;
+  }
+}
+
+@media screen and (min-height: 600px) {
+  .searchBarContainerExpanded {
+    height: 13em;
+  }
+}
+
+@media screen and (min-height: 800px) {
+  .searchBarContainerExpanded {
+    height: 27em;
+  }
+}
+
+
+
+.searchInputContainer {
+  width: 100%;
+  min-height: 4em;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 2px 15px;
+}
+
+.searchInput {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  font-size: 21px;
+  color: #12112e;
+  font-weight: 500;
+  border-radius: 6px;
+  background-color: transparent;
+}
+
+.searchInput:focus {
+  outline: none;
+}
+
+.searchInput:focus::placeholder {
+  opacity: 0;
+}
+
+.searchInput::placeholder {
+  color: var(--primaryColor);
+  transition: all 250ms ease-in-out;
+}
+
+.searchIcon {
+  color: var(--primaryColor);
+  font-size: 27px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 4px;
+  vertical-align: middle; 
+  transition: var(--mainTransition);
+}
+
+.searchIcon:hover {
+  color: var(--logoColor);
+}
+
+.closeIcon {
+  color: var(--primaryColor);
+  font-size: 23px;
+  margin-right: 20px;
+  position: relative;
+  display: inline-block;
+  margin-top: 6px;
+  vertical-align: middle; 
+  transition: var(--mainTransition)
+}
+
+
+.closeIcon:hover {
+  color: var(--logoColor);
+}
+
+
+.mainSearchContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  margin-left: 12px;
+  overflow-y: scroll;
+  
+}
+
+.mainSearchContent::-webkit-scrollbar {
+  display: none;
+}
+
+.lineSeperator {
+  display: flex;
+  min-width: 100%;
+  min-height: 2px;
+  background-color: #d8d8d878;
+}
+
+.no-result {
+  width: 100%;
+  height: 100%;
+
+}
+
+.loadingWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 120px;
+}
+
+.no-search {
+  max-width: 100%;
+  color: #a1a1a1;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 150px;
+}
+
+.image {
+  width: auto;
+  height: 100%;
+  flex: 0.4;
+  display: flex;
+}
+
+
+.image img {
+  width: 80px;
+  height: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+
+
+
+.nav-links a {
+  text-transform: capitalize;
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 0.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  letter-spacing: 3px;
+  font-size: 1.2rem;
+  padding: 0.25rem 0.5rem;
+  transition: var(--mainTransition);
+  cursor: pointer;
+}
+
+.nav-links a:hover {
+  color: var(--btnColor);
+}
+
+
+.preserve {
+  color: var(--mainColor);
+  font-weight: 300;
+}
+
+
+footer {
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #222;
+  text-align: center;
+}
+span {
+  color: hsl(22, 31%, 52%);
+}
+
+h5 {
+  color: #fff;
+  margin: 0.1rem;
+
+  font-weight: 400;
+  text-transform: none;
+  line-height: 1.25;
+}
+
+@media (min-width: 776px) {
+  footer {
+    flex-direction: row;
+  }
+} 
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  flex: 1;
+}
+
+.contain {
+  padding: 1.5rem 2rem;
+  width: 100;
+ 
+}
+
+
+.person {
+  margin-right: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  padding:  0.25rem 1rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.person img {
+  margin-right: 20px;
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+}
+
+.person h4 {
+  width: 100%;
+  margin-bottom: 0.35rem;
+  letter-spacing: 1px;
+}
+.person p {
+  margin-bottom: 0;
+  font-size: 15px;
+  color: #12112e;
+}
+
+.access {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  transition:  var(--mainTransition);
+}
+
+.access:hover {
+  color: var(--accesss);
+}
+
+.information {
+  width: 230px;
 }
