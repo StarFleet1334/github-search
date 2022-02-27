@@ -6,7 +6,7 @@ import UserList from './UserList'
 import { TiDeleteOutline, TiDelete } from 'react-icons/ti'
 
 const Search = () => {
-    const { setIsLoading, setSearchTerm, theme, users, setUsers, linkHeight } = useGlobalContext();
+    const { setIsLoading, setSearchTerm, theme, users, setUsers } = useGlobalContext();
     const [isExpand, setIsExpand] = useState(false);
     const searched = useRef('');
     const [name, setName] = useState('');
