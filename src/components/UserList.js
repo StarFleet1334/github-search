@@ -24,14 +24,14 @@ const UserList = ({ showme }) => {
                             return (
                                 <div key={user.id}>
                                     <article className='person'>
-                                        <a href={user.html_url} target="_blank">
-                                            <img src={user.avatar_url}>
+                                        <a href={user.html_url} target="_blank" rel='noreferrer'>
+                                            <img src={user.avatar_url} alt='icon'>
                                             </img>
 
                                         </a>
                                         <div className='information'>
                                             <h4>{user.login}</h4>
-                                            <p>{`Followers: ${user.followers_url.length}`}</p>
+                                            <p>{`Type: ${user.type}`}</p>
                                         </div>
 
                                         <div>
