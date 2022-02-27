@@ -31,21 +31,22 @@ const AppProvider = ({ children }) => {
 
     const isEmpty = !users || users.length === 0;
 
-    const fetchUsers = async () => {
-        setIsLoading(true);
-        try {
-            if (searchTerm) {
-                const userList = await searchUser(searchTerm);
-                setUsers(userList)
-            }
-            setIsLoading(false);
-        } catch (error) {
-            console.log("Error: ", error)
-            setIsLoading(false);
-        }
-    }
+
 
     useEffect(() => {
+        const fetchUsers = async () => {
+            setIsLoading(true);
+            try {
+                if (searchTerm) {
+                    const userList = await searchUser(searchTerm);
+                    setUsers(userList)
+                }
+                setIsLoading(false);
+            } catch (error) {
+                console.log("Error: ", error)
+                setIsLoading(false);
+            }
+        };
         fetchUsers();
     }, [searchTerm]);
 
